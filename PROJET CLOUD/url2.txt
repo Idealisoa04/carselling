@@ -1,0 +1,6 @@
+moteur :  https://carselling-production.up.railway.app/api/moteurcontroller/add
+ {
+    "nom":"CIDH",
+    "capacite":1.6
+}
+all:  https://carselling-production.up.railway.app/api/moteurcontroller/moteurs

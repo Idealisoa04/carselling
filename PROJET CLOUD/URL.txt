@@ -1,0 +1,139 @@
+prendre tous les annonces
+http://localhost:8080/api/annoncecontroller/annonces
+
+prendre annonce par id
+http://localhost:8080/api/annoncecontroller/annonce/65a135d35c13b66a17195010
+
+prendre tous les annonces par etat: valider ou pas
+http://localhost:8080/api/annoncecontroller/annonces/etat/1
+
+prendre tous les annonces par etat: valider ou pas
+http://localhost:8080/api/annoncecontroller/annonces/statut/1
+
+ajouter un nouvel annnonce:
+http://localhost:8080/api/annoncecontroller/add
+
+update etat: valider ou non
+http://localhost:8080/api/annoncecontroller/updateEtat?id=65a1308b07e42f2e0600c58e&etat=1
+
+update statut: vendu ou non
+http://localhost:8080/api/annoncecontroller/updateEtat?id=65a1308b07e42f2e0600c58e&statut=1
+
+supprime par id
+http://localhost:8080/api/annoncecontroller/delete/65a12aaa07e42f2e0600c588
+par objet
+http://localhost:8080/api/annoncecontroller/delete
+
+prendre tous les carburants
+http://localhost:8080/api/carburantcontroller/carburants
+
+prendre carburant par id
+http://localhost:8080/api/carburantcontroller/carburant/1
+
+ajouter un nouveau carburant
+http://localhost:8080/api/carburantcontroller/add
+
+update un carburant
+http://localhost:8080/api/carburantcontroller/update
+
+delete un carburant par id
+http://localhost:8080/api/carburantcontroller/delete/3
+par objet
+http://localhost:8080/api/carburantcontroller/delete
+
+
+ajout de nouvelle vitesse:
+http://localhost:8080/api/vitessecontroller/add
+
+modifier une vitesse
+http://localhost:8080/api/vitessecontroller/update
+
+toutes les vitesses:
+http://localhost:8080/api/vitessecontroller/vitesses
+
+vitesses/id
+http://localhost:8080/api/vitessecontroller/vitesse/1
+
+effacer par id
+http://localhost:8080/api/vitessecontroller/delete/1
+
+effacer par objet
+http://localhost:8080/api/vitessecontroller/delete
+
+prendre tous les climatisations
+http://localhost:8080/api/climatisationcontroller/climatisations
+
+climatisation par id 
+http://localhost:8080/api/climatisationcontroller/climatisation/1
+
+ajout d'un nouveau climatisation
+http://localhost:8080/api/climatisationcontroller/add
+
+modification
+http://localhost:8080/api/climatisationcontroller/update
+
+suppression
+http://localhost:8080/api/climatisationcontroller/delete/1
+
+tous les jantes
+http://localhost:8080/api/jantecontroller/jantes
+
+jantes par id
+http://localhost:8080/api/jantecontroller/jante/1
+
+ajout
+http://localhost:8080/api/jantecontroller/add
+
+modification
+http://localhost:8080/api/jantecontroller/update
+
+supression
+http://localhost:8080/api/jantecontroller/delete/1
+
+supression a l'aide de l'objet
+http://localhost:8080/api/jantecontroller/delete
+
+prendre toutes les marques
+http://localhost:8080/api/marquecontroller/marques
+
+marque/id
+http://localhost:8080/api/marquecontroller/marque/1
+
+ajouter un nouveau marque
+http://localhost:8080/api/marquecontroller/add
+
+modification
+http://localhost:8080/api/marquecontroller/update
+
+suppression /id
+http://localhost:8080/api/marquecontroller/delete/1
+
+supression/ objet
+http://localhost:8080/api/marquecontroller/delete
+
+tous les categories
+http://localhost:8080/api/categoriecontroller/categories
+
+categorie/id
+http://localhost:8080/api/categoriecontroller/categorie/1
+
+ajout categorie
+http://localhost:8080/api/categoriecontroller/add
+
+modification categorie
+http://localhost:8080/api/categoriecontroller/update
+
+supression /id
+http://localhost:8080/api/categoriecontroller/delete/1
+
+supression/objet
+http://localhost:8080/api/categoriecontroller/delete
+
+ajout favori
+http://localhost:8080/api/favoriscontroller/add?idannonce=65a136cb5c13b66a17195018
+
+enlever de favori
+
+
+prendre les favoris d'un utilisateur
+http://localhost:8080/api/favoriscontroller/favoris
