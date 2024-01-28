@@ -14,21 +14,23 @@ public class CarSellingApplication {
 		SpringApplication.run(CarSellingApplication.class, args);
 	}
 
-	@Bean
-	CorsFilter corsFilter() {
-		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		CorsConfiguration config = new CorsConfiguration();
+	
 
-		// Configure allowed origins, methods, headers, etc.
-		config.addAllowedOrigin("http://localhost:8100"); // Replace with yourallowed
-		// origins
-		config.addAllowedOrigin("http://localhost");
-		config.addAllowedMethod("*");
-		config.addAllowedHeader("*");
+	// @Bean
+	// CorsFilter corsFilter() {
+	// 	UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+	// 	CorsConfiguration config = new CorsConfiguration();
 
-		config.setAllowCredentials(true);
-		source.registerCorsConfiguration("/**", config);
-		CorsFilter rep = new org.springframework.web.filter.CorsFilter(source);
-		return rep;
-	}
+	// 	// Configure allowed origins, methods, headers, etc.
+	// 	config.addAllowedOrigin("http://localhost:8100"); // Replace with yourallowed
+	// 	// origins
+	// 	config.addAllowedOrigin("http://localhost");
+	// 	config.addAllowedMethod("*");
+	// 	config.addAllowedHeader("*");
+
+	// 	config.setAllowCredentials(true);
+	// 	source.registerCorsConfiguration("/**", config);
+	// 	CorsFilter rep = new org.springframework.web.filter.CorsFilter(source);
+	// 	return rep;
+	// }
 }
