@@ -1,7 +1,7 @@
 package com.CarSelling.project.Config;
 
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 import org.springframework.context.annotation.Bean;
@@ -20,13 +20,15 @@ public class FirebaseConfig {
         if (firebaseApps != null && !firebaseApps.isEmpty()) {
             app = firebaseApps.get(0);
         } else {
-            String path = getClass().getClassLoader().getResource("serviceAccountKey.json").getFile();
-            FileInputStream serviceAccount = new FileInputStream(path);
+            // String path =
+            // getClass().getClassLoader().getResource("serviceAccountKey.json").getFile();
+            InputStream serviceAccount = getClass().getClassLoader().getResourceAsStream("serviceAccountKey.json");
+            // FileInputStream serviceAccount = new FileInputStream(path);
 
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                     .setDatabaseUrl("https://carselling.firebaseio.com")
-                    .setStorageBucket("carselling-98e29.appspot.com")
+                    .setStorageBucket("carselling2-78837.appspot.com")
                     .build();
 
             app = FirebaseApp.initializeApp(options);

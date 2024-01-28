@@ -17,7 +17,6 @@ import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-import com.liferay.portal.kernel.service.ImageService;
 
 @Service
 public class FileUploader {
@@ -54,7 +53,10 @@ public class FileUploader {
         String filename = UUID.randomUUID().toString() + ".jpg";
         BlobId blobId = BlobId.of(bucketName, filename); // Replace with your bucker name
         BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("media").build();
-        InputStream inputStream = ImageService.class.getClassLoader().getResourceAsStream("serviceAccountKey.json"); // change
+        // InputStream inputStream =
+        // ImageService.class.getClassLoader().getResourceAsStream("serviceAccountKey.json");
+        // // change
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("serviceAccountKey.json");
 
         GoogleCredentials credentials = GoogleCredentials.fromStream(inputStream);
         Storage storage = StorageOptions.newBuilder().setCredentials(credentials).build().getService();
