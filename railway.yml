@@ -1,6 +1,0 @@
-version: 3
-services:
-  - name: carselling
-    type: java
-    buildCommand: ./mvnw clean install
-    runCommand: java -jar target/carselling.jar
