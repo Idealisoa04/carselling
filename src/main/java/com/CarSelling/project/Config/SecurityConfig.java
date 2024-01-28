@@ -29,8 +29,10 @@ public class SecurityConfig {
                 return http
                                 .csrf(csrf -> csrf.disable())
                                 .authorizeHttpRequests(authorize -> authorize
-                                                .requestMatchers("/auth/**").permitAll()
-                                                .requestMatchers("/api/usercontroller/**").permitAll()
+                                                .requestMatchers("/carselling-production-25cb.up.railway.app/api/usercontroller/**").permitAll()
+                                                .requestMatchers("/api/usercontroller/signin").permitAll()
+                                                .requestMatchers("/api/usercontroller/login").permitAll()
+                                                .requestMatchers("/api/usercontroller/test").permitAll()
                                                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                                                 .anyRequest().authenticated())
                                 .sessionManagement(sessionManagement -> sessionManagement
