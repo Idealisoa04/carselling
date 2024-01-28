@@ -25,6 +25,7 @@ public class VitesseService {
     @Transactional
     public VitesseEntity createNewVitesse(VitesseEntity vitesseEntity) throws Exception {
         try {
+            vitesseEntity.setEtat(1);
             return this.vitesseRepository.save(vitesseEntity);
         } catch (Exception e) {
             throw e;
