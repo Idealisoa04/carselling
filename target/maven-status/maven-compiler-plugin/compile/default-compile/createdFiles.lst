@@ -5,6 +5,7 @@ com\CarSelling\project\controller\StatistiqueController.class
 com\CarSelling\project\repository\ClimatisationRepository.class
 com\CarSelling\project\repository\UtilisateurRepository.class
 com\CarSelling\project\Config\JwtService.class
+com\CarSelling\project\tools\FileUploader.class
 com\CarSelling\project\CarSellingApplication.class
 com\CarSelling\project\service\MessageService.class
 com\CarSelling\project\controller\ModelController.class
@@ -12,6 +13,7 @@ com\CarSelling\project\controller\MarqueController.class
 com\CarSelling\project\repository\AchatRepository.class
 com\CarSelling\project\controller\ClimatisationController.class
 com\CarSelling\project\model\StatistiqueVoitureVendu.class
+com\CarSelling\project\controller\FileUploadController.class
 com\CarSelling\project\Config\CustomAuthenticationProvider.class
 com\CarSelling\project\service\JanteService.class
 com\CarSelling\project\service\VitesseService.class
@@ -24,11 +26,13 @@ com\CarSelling\project\entity\AnnonceEntity.class
 com\CarSelling\project\entity\ModelEntity.class
 com\CarSelling\project\model\Message.class
 com\CarSelling\project\controller\CategorieController.class
+com\CarSelling\project\Config\FirebaseConfig.class
 com\CarSelling\project\repository\VitesseRepository.class
 com\CarSelling\project\tools\Utility.class
 com\CarSelling\project\repository\MessageRepository.class
 com\CarSelling\project\repository\AnnonceRepository.class
 com\CarSelling\project\entity\VModelEntity.class
+com\CarSelling\project\controller\AnnonceController.class
 com\CarSelling\project\model\Photomodel.class
 com\CarSelling\project\model\StatistiqueCommission.class
 com\CarSelling\project\service\UtilisateurService.class
