@@ -22,6 +22,7 @@ com\CarSelling\project\controller\MoteurController.class
 com\CarSelling\project\authentification\JwtGenerator.class
 com\CarSelling\project\entity\CarburantEntity.class
 com\CarSelling\project\Config\SecurityConfig.class
+com\CarSelling\project\controller\MessageController.class
 com\CarSelling\project\entity\AnnonceEntity.class
 com\CarSelling\project\entity\ModelEntity.class
 com\CarSelling\project\model\Message.class

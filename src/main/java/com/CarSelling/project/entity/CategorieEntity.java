@@ -28,8 +28,8 @@ public class CategorieEntity {
         this.etat = etat;
     }
 
-    @OneToMany(mappedBy = "categorie")
-    private Collection<ModelEntity> modelsByIdcategorie;
+    // @OneToMany(mappedBy = "categorie")
+    // private Collection<ModelEntity> modelsByIdcategorie;
 
 
     public Integer getIdcategorie() {
@@ -61,11 +61,11 @@ public class CategorieEntity {
         return Objects.hash(idcategorie, nomcategorie);
     }
 
-    public Collection<ModelEntity> getModelsByIdcategorie() {
-        return modelsByIdcategorie;
-    }
+    // public Collection<ModelEntity> getModelsByIdcategorie() {
+    //     return modelsByIdcategorie;
+    // }
 
-    public void setModelsByIdcategorie(Collection<ModelEntity> modelsByIdcategorie) {
-        this.modelsByIdcategorie = modelsByIdcategorie;
-    }
+    // public void setModelsByIdcategorie(Collection<ModelEntity> modelsByIdcategorie) {
+    //     this.modelsByIdcategorie = modelsByIdcategorie;
+    // }
 }

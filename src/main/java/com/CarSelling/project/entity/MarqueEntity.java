@@ -28,8 +28,8 @@ public class MarqueEntity {
         this.etat = etat;
     }
 
-    @OneToMany(mappedBy = "marque")
-    private Collection<ModelEntity> modelsByIdmarque;
+    // @OneToMany(mappedBy = "marque")
+    // private Collection<ModelEntity> modelsByIdmarque;
 
     public Integer getIdmarque() {
         return idmarque;
@@ -60,11 +60,11 @@ public class MarqueEntity {
         return Objects.hash(idmarque, nommarque);
     }
 
-    public Collection<ModelEntity> getModelsByIdmarque() {
-        return modelsByIdmarque;
-    }
+    // public Collection<ModelEntity> getModelsByIdmarque() {
+    //     return modelsByIdmarque;
+    // }
 
-    public void setModelsByIdmarque(Collection<ModelEntity> modelsByIdmarque) {
-        this.modelsByIdmarque = modelsByIdmarque;
-    }
+    // public void setModelsByIdmarque(Collection<ModelEntity> modelsByIdmarque) {
+    //     this.modelsByIdmarque = modelsByIdmarque;
+    // }
 }

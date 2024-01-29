@@ -19,8 +19,8 @@ public class ClimatisationEntity {
     @Basic
     @Column(name = "etat")
     private Integer etat;
-    @OneToMany(mappedBy = "climatisation")
-    private Collection<ModelEntity> modelsByIdclimatisation;
+    // @OneToMany(mappedBy = "climatisation")
+    // private Collection<ModelEntity> modelsByIdclimatisation;
 
     public Integer getEtat() {
         return etat;
@@ -59,11 +59,11 @@ public class ClimatisationEntity {
         return Objects.hash(idclimatisation, nomclimatisation);
     }
 
-    public Collection<ModelEntity> getModelsByIdclimatisation() {
-        return modelsByIdclimatisation;
-    }
+    // public Collection<ModelEntity> getModelsByIdclimatisation() {
+    //     return modelsByIdclimatisation;
+    // }
 
-    public void setModelsByIdclimatisation(Collection<ModelEntity> modelsByIdclimatisation) {
-        this.modelsByIdclimatisation = modelsByIdclimatisation;
-    }
+    // public void setModelsByIdclimatisation(Collection<ModelEntity> modelsByIdclimatisation) {
+    //     this.modelsByIdclimatisation = modelsByIdclimatisation;
+    // }
 }

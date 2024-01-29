@@ -27,8 +27,8 @@ public class CarburantEntity {
     @Basic
     @Column(name = "etat")
     private Integer etat;
-    @OneToMany(mappedBy = "carburant")
-    private Collection<ModelEntity> modelsByIdcarburant;
+   /* @OneToMany(mappedBy = "carburant")
+    private Collection<ModelEntity> modelsByIdcarburant;*/
 
     public Integer getIdcarburant() {
         return idcarburant;
@@ -59,11 +59,11 @@ public class CarburantEntity {
         return Objects.hash(idcarburant, nomcarburant);
     }
 
-    public Collection<ModelEntity> getModelsByIdcarburant() {
-        return modelsByIdcarburant;
-    }
+    // public Collection<ModelEntity> getModelsByIdcarburant() {
+    //     return modelsByIdcarburant;
+    // }
 
-    public void setModelsByIdcarburant(Collection<ModelEntity> modelsByIdcarburant) {
-        this.modelsByIdcarburant = modelsByIdcarburant;
-    }
+    // public void setModelsByIdcarburant(Collection<ModelEntity> modelsByIdcarburant) {
+    //     this.modelsByIdcarburant = modelsByIdcarburant;
+    // }
 }

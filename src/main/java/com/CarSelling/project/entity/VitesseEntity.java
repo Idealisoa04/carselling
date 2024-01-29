@@ -19,8 +19,8 @@ public class VitesseEntity {
     @Basic
     @Column(name = "etat")
     private Integer etat;
-    @OneToMany(mappedBy = "vitesse")
-    private Collection<ModelEntity> modelsByIdvitesse;
+    // @OneToMany(mappedBy = "vitesse")
+    // private Collection<ModelEntity> modelsByIdvitesse;
 
     public Integer getIdvitesse() {
         return idvitesse;
@@ -59,11 +59,11 @@ public class VitesseEntity {
         return Objects.hash(idvitesse, nomvitesse);
     }
 
-    public Collection<ModelEntity> getModelsByIdvitesse() {
-        return modelsByIdvitesse;
-    }
+    // public Collection<ModelEntity> getModelsByIdvitesse() {
+    //     return modelsByIdvitesse;
+    // }
 
-    public void setModelsByIdvitesse(Collection<ModelEntity> modelsByIdvitesse) {
-        this.modelsByIdvitesse = modelsByIdvitesse;
-    }
+    // public void setModelsByIdvitesse(Collection<ModelEntity> modelsByIdvitesse) {
+    //     this.modelsByIdvitesse = modelsByIdvitesse;
+    // }
 }
