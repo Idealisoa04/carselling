@@ -25,7 +25,9 @@ public class CarSellingApplication {
 		config.addAllowedOrigin("http://localhost:8100"); // Replace with yourallowed
 		// origins
 		config.addAllowedOrigin("http://localhost:3000");
-		config.addAllowedMethod("*");
+		config.addAllowedMethod("PUT");
+		config.addAllowedMethod("GET");
+		config.addAllowedMethod("POST");
 		config.addAllowedHeader("*");
 
 		config.setAllowCredentials(true);

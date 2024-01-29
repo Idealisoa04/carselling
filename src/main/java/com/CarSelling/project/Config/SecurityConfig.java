@@ -32,7 +32,6 @@ public class SecurityConfig {
                 return http
                                 .csrf(csrf -> csrf.disable())
                                 .authorizeHttpRequests(authorize -> authorize
-                                                .requestMatchers("/api/usercontroller/**").permitAll()
                                                 .requestMatchers("/api/usercontroller/signin").permitAll()
                                                 .requestMatchers("/api/usercontroller/login").permitAll()
                                                 .requestMatchers("/api/usercontroller/test").permitAll()
