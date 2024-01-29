@@ -23,12 +23,16 @@ public class Message {
 
     @Field(name = "date")
     private LocalDateTime date;
+
+    @Field(name = "iddiscussion")
+    private Integer iddiscussion;
     
-    public Message(String sender, String recipient, String content, LocalDateTime date) {
+    public Message(String sender, String recipient, String content, LocalDateTime date, Integer iddiscussion) {
         this.sender = sender;
         this.recipient = recipient;
         this.content = content;
         this.date = date;
+        this.iddiscussion = iddiscussion;
     }
 
     public ObjectId getId() {
@@ -73,6 +77,22 @@ public class Message {
         } catch (Exception e) {
             throw e;
         }
+    }
+
+    public ObjectId get_id() {
+        return _id;
+    }
+
+    public void set_id(ObjectId _id) {
+        this._id = _id;
+    }
+
+    public Integer getIddiscussion() {
+        return iddiscussion;
+    }
+
+    public void setIddiscussion(Integer iddiscussion) {
+        this.iddiscussion = iddiscussion;
     }
 
     

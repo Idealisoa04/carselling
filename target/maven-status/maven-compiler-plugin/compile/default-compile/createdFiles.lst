@@ -35,6 +35,8 @@ com\CarSelling\project\repository\AnnonceRepository.class
 com\CarSelling\project\entity\VModelEntity.class
 com\CarSelling\project\controller\AnnonceController.class
 com\CarSelling\project\model\Photomodel.class
+com\CarSelling\project\controller\DiscussionController.class
+com\CarSelling\project\service\DiscussionService.class
 com\CarSelling\project\model\StatistiqueCommission.class
 com\CarSelling\project\service\UtilisateurService.class
 com\CarSelling\project\repository\CategorieRepository.class
@@ -60,12 +62,14 @@ com\CarSelling\project\controller\VitesseController.class
 com\CarSelling\project\service\AnnonceService.class
 com\CarSelling\project\entity\ClimatisationEntity.class
 com\CarSelling\project\Config\JwtAuthFilter.class
+com\CarSelling\project\entity\DiscussionEntity.class
 com\CarSelling\project\model\StatistiqueMarque.class
 com\CarSelling\project\entity\FavorisEntity.class
 com\CarSelling\project\controller\FavorisController.class
 com\CarSelling\project\controller\AchatController.class
 com\CarSelling\project\service\MarqueService.class
 com\CarSelling\project\entity\AchatEntity.class
+com\CarSelling\project\repository\DiscussionRepository.class
 com\CarSelling\project\Utils\Status.class
 com\CarSelling\project\repository\CarburantRepository.class
 com\CarSelling\project\controller\JanteController.class

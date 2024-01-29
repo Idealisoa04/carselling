@@ -1,6 +1,7 @@
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\Config\JwtService.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\Config\CustomUserDetailsService.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\service\ModelService.java
+C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\controller\DiscussionController.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\model\Photomodel.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\entity\VitesseEntity.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\repository\FavorisRepository.java
@@ -20,6 +21,7 @@ C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\proj
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\controller\ModelController.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\model\StatistiqueMarque.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\entity\AchatEntity.java
+C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\entity\DiscussionEntity.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\entity\UtilisateurEntity.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\controller\ClimatisationController.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\controller\VitesseController.java
@@ -36,6 +38,7 @@ C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\proj
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\authentification\JwtProperties.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\controller\MarqueController.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\entity\ModelEntity.java
+C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\repository\DiscussionRepository.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\controller\AnnonceController.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\entity\MarqueEntity.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\repository\VitesseRepository.java
@@ -62,6 +65,7 @@ C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\proj
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\controller\MoteurController.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\CarSellingApplication.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\repository\JanteRepository.java
+C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\service\DiscussionService.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\Utils\Status.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\repository\MarqueRepository.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\service\FavorisService.java

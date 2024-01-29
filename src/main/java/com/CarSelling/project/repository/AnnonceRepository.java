@@ -39,4 +39,7 @@ public interface AnnonceRepository extends MongoRepository<AnnonceEntity, Object
         return new_array;
     }
 
+    @Query("{'id_user': ?0 }")
+    List<AnnonceEntity> findById_user(Integer id_user);
+
 }

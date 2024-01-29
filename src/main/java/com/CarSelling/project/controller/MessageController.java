@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.CarSelling.project.Config.JwtService;
 import com.CarSelling.project.model.Message;
 import com.CarSelling.project.service.MessageService;
 
@@ -16,12 +17,17 @@ public class MessageController {
 
     @Autowired
     private MessageService messagingService;
+    @Autowired
+    private JwtService jwtService;
 
     @GetMapping("/sendMessage")
-    public Message sendMessage(@RequestBody Message message) throws Exception {
-        try {
+    public Message sendMessage(@RequestBody Message message,@RequestHeader(name = "Authorization") String authHeader) throws Exception{
+        try{
+            String jwt = authHeader.substring(7);
+            String idUser = jwtService.extractUsername(jwt);
             LocalDateTime currentDateTime = LocalDateTime.now();
             message.setDate(currentDateTime);
+            message.setSender(idUser);
             
            return messagingService.sendMessage(message);
             
@@ -35,4 +41,8 @@ public class MessageController {
         return messagingService.getMessagesByRecipient(recipient);
     }
 
+    // @GetMapping("/{iddiscussion}")
+    // public List<Message> getMessages(@PathVariable Integer iddiscussion) {
+    //     return messagingService.getMessagesByRecipient(recipient);
+    // }
 }

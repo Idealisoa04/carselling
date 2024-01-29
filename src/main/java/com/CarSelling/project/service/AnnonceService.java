@@ -81,6 +81,10 @@ public class AnnonceService {
         return "ok";
     }
 
+    public List<AnnonceEntity> findHistorique(Integer id_user){
+        return this.annonceRepository.findById_user(id_user);
+    }
+
     public String deleteAnnonceById(ObjectId idannonce) {
         try {
             this.annonceRepository.deleteById(idannonce);

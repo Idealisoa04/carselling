@@ -28,6 +28,7 @@ public class CarSellingApplication {
 		config.addAllowedMethod("PUT");
 		config.addAllowedMethod("GET");
 		config.addAllowedMethod("POST");
+		config.addAllowedMethod("DELETE");
 		config.addAllowedHeader("*");
 
 		config.setAllowCredentials(true);

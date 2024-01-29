@@ -20,4 +20,16 @@ public class MessageService {
     public List<Message> getMessagesByRecipient(String recipient) {
         return messageRepository.findByRecipient(recipient);
     }
+
+    public List<Message> getMessageByDiscussion(Integer iddiscussion){
+        return messageRepository.findByIddiscussion(iddiscussion);
+    }
+
+    // public List<Message> getAllMessageSender(Integer iddiscussion, String sender){
+    //     return messageRepository.findByIddiscussionSender(iddiscussion, sender);
+    // }
+
+    // public List<Message> getAllMessageRecipient(Integer iddiscussion, String recipient){
+    //     return messageRepository.findByIddiscussionRecipient(iddiscussion, recipient);
+    // }
 }

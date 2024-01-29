@@ -14,11 +14,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.jsonwebtoken.Claims;
+
+import com.CarSelling.project.Config.JwtService;
 import com.CarSelling.project.entity.AnnonceEntity;
 import com.CarSelling.project.service.AnnonceService;
 import com.CarSelling.project.tools.FileUploader;
@@ -29,6 +33,9 @@ public class AnnonceController {
 
     @Autowired
     private AnnonceService annonceService;
+
+    @Autowired
+    private JwtService jwtService;
 
     @GetMapping("/annonce/{id}")
     public ResponseEntity<List> getById(@PathVariable ObjectId id) {
@@ -51,12 +58,16 @@ public class AnnonceController {
     }
 
     @PostMapping(path = "/add", consumes = "application/json")
-    public ResponseEntity<Object> addNewAnnonce(@RequestBody AnnonceEntity annonceEntity) {
+    public ResponseEntity<Object> addNewAnnonce(@RequestBody AnnonceEntity annonceEntity,@RequestHeader(name = "Authorization") String authHeader) throws Exception{
+        try{
+            String jwt = authHeader.substring(7);
+            String idUser = jwtService.extractUsername(jwt);
+            
+            annonceEntity.setId_user(Integer.valueOf(idUser));
 
-        LocalDateTime currentDateTime = LocalDateTime.now();
-        annonceEntity.setDate(currentDateTime);
-        FileUploader fileUploader = new FileUploader();
-        try {
+            LocalDateTime currentDateTime = LocalDateTime.now();
+            annonceEntity.setDate(currentDateTime);
+            FileUploader fileUploader = new FileUploader();
             List<String> urls = new ArrayList();
             String url = null;
 
@@ -125,6 +136,17 @@ public class AnnonceController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
 
+    }
+
+    @GetMapping("/historique")
+    public ResponseEntity<List<AnnonceEntity>> findHistorique(@RequestHeader(name = "Authorization") String authHeader) throws Exception{
+        try{
+            String jwt = authHeader.substring(7);
+            String idUser = jwtService.extractUsername(jwt);
+            return ResponseEntity.ok(this.annonceService.findHistorique(Integer.valueOf(idUser)));
+        }catch(Exception e){
+            throw e;
+        }
     }
 
 }
