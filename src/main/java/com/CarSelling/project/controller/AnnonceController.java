@@ -70,15 +70,16 @@ public class AnnonceController {
             FileUploader fileUploader = new FileUploader();
             List<String> urls = new ArrayList();
             String url = null;
-
+            if(annonceEntity.getPhotos() != null) {
             for (String s : annonceEntity.getPhotos()) {
-                s = s.split("data:image/jpeg;base64,")[1];
-                // System.out.println(s);
-                url = fileUploader.uploadImage(s);
-                System.out.println(url + " url");
-                urls.add(url);
-            }
-            annonceEntity.setPhotos(urls);
+                    s = s.split("data:image/jpeg;base64,")[1];
+                    // System.out.println(s);
+                    url = fileUploader.uploadImage(s);
+                    System.out.println(url + " url");
+                    urls.add(url);
+                }
+                annonceEntity.setPhotos(urls);
+        }
             annonceEntity.setEtat(0);
             return ResponseEntity.ok(this.annonceService.createAnnonce(annonceEntity));
         } catch (Exception e) {
