@@ -10,6 +10,7 @@ import com.CarSelling.project.service.UtilisateurService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,12 +35,12 @@ public class UtilisateurController {
     private  JwtGenerator jwtGenerator;
 
     @PostMapping("/login")
-    public String controlConnexion(@RequestParam(name = "") String email, @RequestParam(name = "") String mdp) throws Exception{
+    public ResponseEntity<String> controlConnexion(@RequestParam(name = "") String email, @RequestParam(name = "") String mdp) throws Exception{
         try {
             String token = this.controlUtilisateur(email, mdp);
-            return token;
+            return ResponseEntity.ok(token);
         } catch (Exception e) {
-            throw e;
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 
@@ -49,7 +50,7 @@ public class UtilisateurController {
             this.utilisateurService.insertUser(nom, prenom, dtn, sexe, email, mdp);
             return  ResponseEntity.ok("Tongasoa, Bienvenue ");
         } catch (Exception e) {
-            throw e;
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 
