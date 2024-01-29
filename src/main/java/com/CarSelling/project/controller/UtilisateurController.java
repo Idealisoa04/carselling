@@ -34,10 +34,10 @@ public class UtilisateurController {
     private  JwtGenerator jwtGenerator;
 
     @PostMapping("/login")
-    public String controlConnexion(@RequestParam(name = "") String email, @RequestParam(name = "") String mdp) throws Exception{
+    public ResponseEntity<String> controlConnexion(@RequestParam(name = "") String email, @RequestParam(name = "") String mdp) throws Exception{
         try {
             String token = this.controlUtilisateur(email, mdp);
-            return token;
+            return ResponseEntity.ok(token);
         } catch (Exception e) {
             throw e;
         }

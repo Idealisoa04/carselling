@@ -45,18 +45,18 @@ public class SecurityConfig {
                                 .build();
         }
 
-        @Bean
-        public CorsFilter corsFilter() {
-        CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.addAllowedOrigin("*"); // Ajoutez ici votre domaine spécifique
-        corsConfiguration.addAllowedMethod("*");
-        corsConfiguration.addAllowedHeader("*");
-        corsConfiguration.setAllowCredentials(true);
+//         @Bean
+//         public CorsFilter corsFilter() {
+//         CorsConfiguration corsConfiguration = new CorsConfiguration();
+//         corsConfiguration.addAllowedOrigin("*"); // Ajoutez ici votre domaine spécifique
+//         corsConfiguration.addAllowedMethod("*");
+//         corsConfiguration.addAllowedHeader("*");
+//         corsConfiguration.setAllowCredentials(true);
 
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", corsConfiguration);
+//         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//         source.registerCorsConfiguration("/**", corsConfiguration);
 
-        return new CorsFilter(source);
-    }
+//         return new CorsFilter(source);
+//     }
 
 }

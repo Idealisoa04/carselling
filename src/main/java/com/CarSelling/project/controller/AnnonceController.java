@@ -106,7 +106,7 @@ public class AnnonceController {
     }
 
     @PutMapping("/updateEtat") // valider ou pas
-    public ResponseEntity<String> updateEtat(@RequestParam("id") ObjectId id, @RequestParam("etat") Integer etat) {
+    public ResponseEntity<String> updateEtat(@PathVariable("id") ObjectId id, @PathVariable("etat") Integer etat) {
 
         try {
 
