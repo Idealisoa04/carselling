@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.jsonwebtoken.Claims;
+import jakarta.servlet.http.HttpServletRequest;
 
 import com.CarSelling.project.Config.JwtService;
 import com.CarSelling.project.entity.AnnonceEntity;
@@ -118,15 +119,18 @@ public class AnnonceController {
     }
 
     @PutMapping("/updateEtat") // valider ou pas
-    public ResponseEntity<String> updateEtat(@PathVariable("id") ObjectId id, @PathVariable("etat") Integer etat) {
+    public ResponseEntity<String> updateEtat(HttpServletRequest req) {
 
         try {
+            ObjectId id = new ObjectId(req.getParameter("id"));
+            Integer etat = Integer.valueOf(req.getParameter("etat"));
 
             return ResponseEntity.ok(this.annonceService.updateEtat(id, etat));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
+
 
     @PutMapping("/updateStatut") // vendu ou pas
     public ResponseEntity<String> updateStatut(@RequestParam("id") ObjectId id,

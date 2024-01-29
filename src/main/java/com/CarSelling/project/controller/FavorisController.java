@@ -9,11 +9,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.CarSelling.project.Config.JwtService;
 import com.CarSelling.project.entity.AnnonceEntity;
 import com.CarSelling.project.entity.FavorisEntity;
 import com.CarSelling.project.entity.UtilisateurEntity;
@@ -28,15 +30,23 @@ public class FavorisController {
     private FavorisService favorisService;
     @Autowired
     private AnnonceService annonceService;
+    
+    @Autowired
+    private JwtService jwtService;
 
     @GetMapping(path = "/favoris")
-    public List<AnnonceEntity> getAllfavoris() {
-        Integer idUser = 1;
+    public List<AnnonceEntity> getAllfavoris(@RequestHeader(name = "Authorization") String authHeader) throws Exception{
+        try{
+        String jwt = authHeader.substring(7);
+        Integer idUser = Integer.valueOf(this.jwtService.extractUsername(jwt));
         Integer etat = 1;
         List<FavorisEntity> all_favs = this.favorisService.getFavorisByUser(idUser, etat);
         Utility utility = new Utility();
         List<ObjectId> annonces = utility.getIdAnnoncesFromFAV(all_favs);
         return this.annonceService.getAllByIdAnnonces(annonces);
+        }catch(Exception e){
+            throw e;
+        }
 
     }
 
