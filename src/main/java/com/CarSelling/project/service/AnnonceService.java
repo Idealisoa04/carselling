@@ -91,13 +91,12 @@ public class AnnonceService {
     }
 
     @Transactional
-    public String updateEtat(ObjectId id, Integer etat, Double commission) throws Exception {
+    public String updateEtat(ObjectId id, Integer etat) throws Exception {
         try {
             mongoTemplate.updateFirst(
                     Query.query(Criteria.where("_id").is(id)),
                     new Update()
-                            .set("etat", etat)
-                            .set("commission", commission), // Ajout de la mise à jour de la commission
+                            .set("etat", etat), // Ajout de la mise à jour de la commission
                     AnnonceEntity.class);
         } catch (Exception e) {
             throw e;
@@ -110,11 +109,12 @@ public class AnnonceService {
     }
 
     @Transactional
-    public String updateStatut(ObjectId id, Integer statut) throws Exception {
+    public String updateStatut(ObjectId id, Integer statut, Double commission) throws Exception {
         try {
             mongoTemplate.updateFirst(
                     Query.query(Criteria.where("_id").is(id)),
-                    new Update().set("statut", statut),
+                    new Update().set("statut", statut)
+                    .set("commission", commission),
                     AnnonceEntity.class);
         } catch (Exception e) {
             throw e;

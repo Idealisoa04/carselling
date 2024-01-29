@@ -106,12 +106,11 @@ public class AnnonceController {
     }
 
     @PutMapping("/updateEtat") // valider ou pas
-    public ResponseEntity<String> updateEtat(@RequestParam("id") ObjectId id, @RequestParam("etat") Integer etat,
-            @RequestParam("commission") Double commission) {
+    public ResponseEntity<String> updateEtat(@RequestParam("id") ObjectId id, @RequestParam("etat") Integer etat) {
 
         try {
 
-            return ResponseEntity.ok(this.annonceService.updateEtat(id, etat, commission));
+            return ResponseEntity.ok(this.annonceService.updateEtat(id, etat));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
@@ -119,9 +118,9 @@ public class AnnonceController {
 
     @PutMapping("/updateStatut") // vendu ou pas
     public ResponseEntity<String> updateStatut(@RequestParam("id") ObjectId id,
-            @RequestParam("statut") Integer statut) {
+            @RequestParam("statut") Integer statut,@RequestParam("commission") Double commission) {
         try {
-            return ResponseEntity.ok(this.annonceService.updateStatut(id, statut));
+            return ResponseEntity.ok(this.annonceService.updateStatut(id, statut, commission));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }

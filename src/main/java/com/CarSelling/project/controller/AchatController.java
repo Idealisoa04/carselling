@@ -30,7 +30,7 @@ public class AchatController {
         achatEntity.setIdannonce(idannonce);
         try {
             this.achatService.addNewAchat(achatEntity);
-            this.annonceService.updateStatut(new ObjectId(idannonce), 1);
+            this.annonceService.updateStatut(new ObjectId(idannonce), 1,20.0);
             return ResponseEntity.ok("ok");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
