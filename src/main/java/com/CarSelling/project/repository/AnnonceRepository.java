@@ -30,6 +30,14 @@ public interface AnnonceRepository extends MongoRepository<AnnonceEntity, Object
     @Query("{'_id': ?0 }")
     void updateStatut(ObjectId id, Integer statut);
 
+
+    List<AnnonceEntity> findByModele_Idmodel(Integer idModel);
+
+    List<AnnonceEntity> findByModele_Categorie_Idcategorie(Integer idCategorie);
+
+    List<AnnonceEntity> findByModele_Marque_Idmarque(Integer idMarque);
+
+
     @Override
     default List<AnnonceEntity> findAllById(Iterable<ObjectId> ids) {
         List<AnnonceEntity> new_array = new ArrayList();

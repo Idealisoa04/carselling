@@ -1,3 +1,4 @@
+C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\controller\RechercheController.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\Config\JwtService.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\Config\CustomUserDetailsService.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\service\ModelService.java
@@ -53,6 +54,7 @@ C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\proj
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\controller\JanteController.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\Enum\Role.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\repository\ClimatisationRepository.java
+C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\service\RerchercheService.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\authentification\JwtGenerator.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\entity\FavorisEntity.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\entity\CarburantEntity.java
@@ -69,6 +71,7 @@ C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\proj
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\Utils\Status.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\repository\MarqueRepository.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\service\FavorisService.java
+C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\model\Recherchemodel.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\controller\MessageController.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\tools\Utility.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\entity\CategorieEntity.java

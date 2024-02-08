@@ -126,4 +126,29 @@ public class AnnonceService {
         return "ok";
 
     }
+    public List<AnnonceEntity> getAnnonceByModel(Integer idModel) {
+        try {
+            return this.annonceRepository.findByModele_Idmodel(idModel);
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
+    public List<AnnonceEntity> getAnnonceByCategorie(Integer idCategorie) {
+        try {
+            return this.annonceRepository
+                    .findByModele_Categorie_Idcategorie(idCategorie);
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
+    public List<AnnonceEntity> getAnnonceByMarque(Integer idMarque) {
+        try {
+            return this.annonceRepository
+                    .findByModele_Marque_Idmarque(idMarque);
+        } catch (Exception e) {
+            throw e;
+        }
+    }
 }

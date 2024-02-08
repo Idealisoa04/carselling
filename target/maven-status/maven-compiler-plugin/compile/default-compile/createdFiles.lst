@@ -33,11 +33,14 @@ com\CarSelling\project\tools\Utility.class
 com\CarSelling\project\repository\MessageRepository.class
 com\CarSelling\project\repository\AnnonceRepository.class
 com\CarSelling\project\entity\VModelEntity.class
+com\CarSelling\project\service\RerchercheService.class
 com\CarSelling\project\controller\AnnonceController.class
 com\CarSelling\project\model\Photomodel.class
+com\CarSelling\project\model\Recherchemodel.class
 com\CarSelling\project\controller\DiscussionController.class
 com\CarSelling\project\service\DiscussionService.class
 com\CarSelling\project\model\StatistiqueCommission.class
+com\CarSelling\project\controller\RechercheController.class
 com\CarSelling\project\service\UtilisateurService.class
 com\CarSelling\project\repository\CategorieRepository.class
 com\CarSelling\project\entity\MarqueEntity.class
