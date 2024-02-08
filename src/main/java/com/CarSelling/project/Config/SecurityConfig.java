@@ -40,6 +40,8 @@ public class SecurityConfig {
                                                 .requestMatchers("/api/categoriecontroller/categories").permitAll()
                                                 .requestMatchers("/api/modelcontroller/models").permitAll()
                                                 .requestMatchers("/api/marquecontroller/marques").permitAll()
+                                                .requestMatchers("/api/recherchecontroller/search").permitAll()
+                                                .requestMatchers("/api/messagecontroller/saveIdannonce").permitAll()
                                                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                                                 .anyRequest().authenticated())
                                 .sessionManagement(sessionManagement -> sessionManagement
