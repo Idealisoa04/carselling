@@ -12,7 +12,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import com.CarSelling.project.Config.JwtService;
+import com.CarSelling.project.entity.DiscussionEntity;
 import com.CarSelling.project.model.Message;
+import com.CarSelling.project.service.DiscussionService;
 import com.CarSelling.project.service.MessageService;
 
 @RestController
@@ -23,8 +25,10 @@ public class MessageController {
     private MessageService messagingService;
     @Autowired
     private JwtService jwtService;
+    @Autowired
+    private DiscussionService discussionService;
 
-    @GetMapping("/sendMessage")
+    @PostMapping("/sendMessage")
     public Message sendMessage(@RequestBody Message message,@RequestHeader(name = "Authorization") String authHeader) throws Exception{
         try{
             String jwt = authHeader.substring(7);
@@ -62,8 +66,18 @@ public class MessageController {
     }
 
     @GetMapping("/{recipient}")
-    public List<Message> getMessagesByRecipient(@PathVariable String recipient) {
-        return messagingService.getMessagesByRecipient(recipient);
+    public List<Message> getMessagesByRecipient(@PathVariable String recipient,@RequestHeader(name = "Authorization") String authHeader) throws Exception{
+        try{
+            String jwt = authHeader.substring(7);
+            String idUser = jwtService.extractUsername(jwt);
+            DiscussionEntity discussion =  this.discussionService.getOneDiscussion(Integer.valueOf(idUser),Integer.valueOf(recipient));
+            if(discussion == null){
+                this.discussionService.insertDiscussion(Integer.valueOf(idUser), Integer.valueOf(recipient));
+            }
+            return messagingService.getMessagesByRecipient(recipient);
+        } catch (Exception e){
+            throw e;
+        }
     }
 
     // @GetMapping("/{iddiscussion}")
