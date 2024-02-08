@@ -1,7 +1,11 @@
 package com.CarSelling.project.controller;
+import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -33,6 +37,27 @@ public class MessageController {
             
         } catch (Exception e) {
             throw e;
+        }
+    }
+
+    @GetMapping("/saveIdannonce")
+    public ResponseEntity<String> saveSession( @RequestParam(name = "idannonce") String idannonce,HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.setAttribute("idannonce", idannonce);
+
+        return  ResponseEntity.ok("idannonce");
+
+    }
+
+    @GetMapping("/getIdannonce")
+    ResponseEntity<String> getSession(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        Object valeur = session.getAttribute("idannonce");
+
+        if (valeur != null) {
+            return ResponseEntity.ok(valeur.toString());
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("La valeur n'a pas été trouvée en session");
         }
     }
 

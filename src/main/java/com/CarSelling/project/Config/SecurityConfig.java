@@ -37,6 +37,9 @@ public class SecurityConfig {
                                                 .requestMatchers("/api/usercontroller/test").permitAll()
                                                 .requestMatchers("/api/annoncecontroller/annonces").permitAll()
                                                 .requestMatchers("/api/annoncecontroller/annonce/**").permitAll()
+                                                .requestMatchers("/api/categoriecontroller/categories").permitAll()
+                                                .requestMatchers("/api/modelcontroller/models").permitAll()
+                                                .requestMatchers("/api/marquecontroller/marques").permitAll()
                                                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                                                 .anyRequest().authenticated())
                                 .sessionManagement(sessionManagement -> sessionManagement
