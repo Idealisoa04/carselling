@@ -1,5 +1,6 @@
 package com.CarSelling.project.service;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +20,6 @@ public class DiscussionService {
     private DiscussionRepository discussionRepository;
     @Autowired
     private UtilisateurRepository utilisateurRepository;
-    @Autowired
-    private UtilisateurService utilisateurService;
 
     public DiscussionEntity getOneDiscussion(Integer iduser1, Integer iduser2) throws Exception{
         try{
@@ -49,13 +48,25 @@ public class DiscussionService {
                     recipient = all.get(i).getIduser2();
                 }
                 System.out.println(recipient+"user"+iduser);
-                UtilisateurEntity user = this.utilisateurService.findUserDescriById(recipient);
+                UtilisateurEntity user = this.findUserDescriById(recipient);
                 rep.add(new Discussion(user,all.get(i).getIddiscussion(),iduser));
             }
             return rep;
         } catch (Exception e) {
             throw e;
         }
+    }
+
+    public UtilisateurEntity findUserDescriById(Integer id){
+        Object[] data = this.utilisateurRepository.findUserDescriById(id);
+        UtilisateurEntity user = new UtilisateurEntity();
+            user.setNom(data[0].toString());
+            user.setPrenom(data[1].toString());
+            user.setDateNaissance((Date) data[2]);
+            user.setSexe((Integer) data[3]);
+            user.setEmail(data[4].toString());
+            System.out.println(user.getNom());
+            return user;
     }
 
     public void insertDiscussion(Integer iduser1, Integer iduser2) throws Exception{
