@@ -36,6 +36,8 @@ public class UtilisateurService {
 
     public UtilisateurEntity findUserDescriById(Integer id){
         Object[] data = this.utilisateurRepository.findUserDescriById(id);
+        System.out.println(data.length);
+
         UtilisateurEntity user = new UtilisateurEntity();
             user.setNom((String) data[0]);
             user.setPrenom((String) data[1]);
