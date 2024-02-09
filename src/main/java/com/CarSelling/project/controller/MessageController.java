@@ -29,7 +29,7 @@ public class MessageController {
     private DiscussionService discussionService;
 
     @PostMapping("/sendMessage")
-    public Message sendMessage(@RequestBody Message message,@RequestHeader(name = "Authorization") String authHeader) throws Exception{
+    public ResponseEntity<Message> sendMessage(@RequestBody Message message,@RequestHeader(name = "Authorization") String authHeader) throws Exception{
         try{
             String jwt = authHeader.substring(7);
             String idUser = jwtService.extractUsername(jwt);
@@ -37,7 +37,7 @@ public class MessageController {
             message.setDate(currentDateTime);
             message.setSender(idUser);
             
-           return messagingService.sendMessage(message);
+           return ResponseEntity.ok(messagingService.sendMessage(message));
             
         } catch (Exception e) {
             throw e;

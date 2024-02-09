@@ -1,9 +1,11 @@
 package com.CarSelling.project.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.CarSelling.project.entity.DiscussionEntity;
 import com.CarSelling.project.entity.UtilisateurEntity;
+import com.CarSelling.project.model.Discussion;
 import com.CarSelling.project.repository.DiscussionRepository;
 import com.CarSelling.project.repository.UtilisateurRepository;
 
@@ -28,6 +30,16 @@ public class DiscussionService {
 
     public List<DiscussionEntity> getAllDiscussion(Integer iduser) throws Exception{
         try{
+            
+            return discussionRepository.findAllDiscussion(iduser);
+        } catch(Exception e){
+            throw e;
+        }
+    }
+
+    public List<Discussion> getAllDiscussionDescri(Integer iduser) throws Exception{
+        try {
+            List<Discussion> rep = new ArrayList<Discussion>();
             List<DiscussionEntity> all = discussionRepository.findAllDiscussion(iduser);
             for(int i=0 ; i<all.size() ; i++){
                 Integer recipient = all.get(i).getIduser1();
@@ -35,11 +47,11 @@ public class DiscussionService {
                     recipient = all.get(i).getIduser2();
                 }
                 UtilisateurEntity user = this.utilisateurRepository.findUserById(recipient);
-                all.get(i).setRecipient(user);
+                Discussion disc = new Discussion(user,all.get(i).getIddiscussion(),iduser);
+                rep.add(disc);
             }
-            return all;
-            //return discussionRepository.findAllDiscussion(iduser);
-        } catch(Exception e){
+            return rep;
+        } catch (Exception e) {
             throw e;
         }
     }

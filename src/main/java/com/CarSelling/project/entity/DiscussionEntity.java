@@ -28,13 +28,6 @@ public class DiscussionEntity {
     @Column(name = "iduser2")
     private Integer iduser2;
 
-    
-    @Transient
-    private UtilisateurEntity recipient;
-
-
-
-    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -72,12 +65,5 @@ public class DiscussionEntity {
         this.iduser2 = iduser2;
     }
 
-    public UtilisateurEntity getRecipient() {
-        return recipient;
-    }
-
-    public void setRecipient(UtilisateurEntity recipient) {
-        this.recipient = recipient;
-    }
 
 }

@@ -42,6 +42,7 @@ com\CarSelling\project\controller\DiscussionController.class
 com\CarSelling\project\service\DiscussionService.class
 com\CarSelling\project\model\StatistiqueCommission.class
 com\CarSelling\project\controller\RechercheController.class
+com\CarSelling\project\model\Discussion.class
 com\CarSelling\project\service\UtilisateurService.class
 com\CarSelling\project\repository\CategorieRepository.class
 com\CarSelling\project\entity\MarqueEntity.class
