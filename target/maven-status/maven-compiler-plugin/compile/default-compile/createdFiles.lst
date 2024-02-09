@@ -43,6 +43,7 @@ com\CarSelling\project\service\DiscussionService.class
 com\CarSelling\project\model\StatistiqueCommission.class
 com\CarSelling\project\controller\RechercheController.class
 com\CarSelling\project\model\Discussion.class
+com\CarSelling\project\entity\FavoriteEntity.class
 com\CarSelling\project\service\UtilisateurService.class
 com\CarSelling\project\repository\CategorieRepository.class
 com\CarSelling\project\entity\MarqueEntity.class
@@ -71,6 +72,7 @@ com\CarSelling\project\entity\DiscussionEntity.class
 com\CarSelling\project\model\StatistiqueMarque.class
 com\CarSelling\project\entity\FavorisEntity.class
 com\CarSelling\project\controller\FavorisController.class
+com\CarSelling\project\repository\FavoriteRepository.class
 com\CarSelling\project\controller\AchatController.class
 com\CarSelling\project\service\MarqueService.class
 com\CarSelling\project\entity\AchatEntity.class

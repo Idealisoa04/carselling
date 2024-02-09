@@ -6,37 +6,41 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.CarSelling.project.entity.FavorisEntity;
+import com.CarSelling.project.entity.FavoriteEntity;
 import com.CarSelling.project.repository.FavorisRepository;
+import com.CarSelling.project.repository.FavoriteRepository;
 
 @Service
 public class FavorisService {
     @Autowired
     private FavorisRepository favorisRepository;
+    @Autowired
+    private FavoriteRepository favoriteRepository;
 
-    public List<FavorisEntity> getFavorisByUser(Integer iduser, Integer etat) {
-        return this.favorisRepository.getFavorisByUser(iduser,
-                etat);
+    public List<FavoriteEntity> getFavorisByUser(Integer iduser, Integer etat) {
+        return this.favoriteRepository.findByIduserAndEtat(iduser,
+                etat);// F
     }
 
     @Transactional
-    public void addnewFavoris(FavorisEntity favorisEntity) throws Exception {
+    public void addnewFavoris(FavoriteEntity favorisEntity) throws Exception {
         try {
             favorisEntity.setEtat(1);
-            this.favorisRepository.save(favorisEntity);
+            this.favoriteRepository.save(favorisEntity);
         } catch (Exception e) {
             throw e;
         }
     }
 
     @Transactional
-    public void removeFromFavoris(Integer idfavoris) throws Exception {
+    public void removeFromFavoris(FavoriteEntity fav) throws Exception {
         try {
-            FavorisEntity fav = this.favorisRepository.getReferenceById(idfavoris);
+
             fav.setEtat(0);
-            this.favorisRepository.save(fav);
+            this.favoriteRepository.save(fav);
         } catch (Exception e) {
             throw e;
         }
     }
+
 }

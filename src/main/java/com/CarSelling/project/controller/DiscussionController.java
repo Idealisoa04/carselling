@@ -52,11 +52,12 @@ public class DiscussionController {
     }
 
     @GetMapping("/discussions")
-    public ResponseEntity<List<Discussion>> getDiscussions(@RequestHeader(name = "Authorization") String authHeader) throws Exception{
+    public ResponseEntity<List<DiscussionEntity>> getDiscussions(@RequestHeader(name = "Authorization") String authHeader) throws Exception{
         try{
             String jwt = authHeader.substring(7);
             String idUser = jwtService.extractUsername(jwt);
-            return ResponseEntity.ok(this.discussionService.getAllDiscussionDescri(Integer.valueOf(idUser)));
+            
+            return ResponseEntity.ok(this.discussionService.getAllDiscussion(Integer.valueOf(idUser)));
         }catch(Exception e){
             throw e;
         }

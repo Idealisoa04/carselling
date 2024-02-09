@@ -15,12 +15,14 @@ C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\proj
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\controller\CategorieController.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\model\StatistiqueCommission.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\service\UtilisateurService.java
+C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\repository\FavoriteRepository.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\controller\FileUploadController.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\tools\FileUploader.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\controller\FavorisController.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\service\VitesseService.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\controller\ModelController.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\model\StatistiqueMarque.java
+C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\entity\FavoriteEntity.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\entity\AchatEntity.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\entity\DiscussionEntity.java
 C:\Users\Idealisoa\Documents\GitHub\carselling\src\main\java\com\CarSelling\project\entity\UtilisateurEntity.java

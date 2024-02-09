@@ -30,7 +30,6 @@ public class DiscussionService {
 
     public List<DiscussionEntity> getAllDiscussion(Integer iduser) throws Exception{
         try{
-            
             return discussionRepository.findAllDiscussion(iduser);
         } catch(Exception e){
             throw e;
@@ -47,8 +46,7 @@ public class DiscussionService {
                     recipient = all.get(i).getIduser2();
                 }
                 UtilisateurEntity user = this.utilisateurRepository.findUserById(recipient);
-                Discussion disc = new Discussion(user,all.get(i).getIddiscussion(),iduser);
-                rep.add(disc);
+                rep.add(new Discussion(user,all.get(i).getIddiscussion(),iduser));
             }
             return rep;
         } catch (Exception e) {

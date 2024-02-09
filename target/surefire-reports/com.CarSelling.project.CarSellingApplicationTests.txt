@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.CarSelling.project.CarSellingApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 48.577 s - in com.CarSelling.project.CarSellingApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 59.63 s - in com.CarSelling.project.CarSellingApplicationTests
