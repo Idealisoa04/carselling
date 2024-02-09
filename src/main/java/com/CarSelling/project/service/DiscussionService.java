@@ -19,6 +19,8 @@ public class DiscussionService {
     private DiscussionRepository discussionRepository;
     @Autowired
     private UtilisateurRepository utilisateurRepository;
+    @Autowired
+    private UtilisateurService utilisateurService;
 
     public DiscussionEntity getOneDiscussion(Integer iduser1, Integer iduser2) throws Exception{
         try{
@@ -46,7 +48,8 @@ public class DiscussionService {
                 if(recipient == iduser){
                     recipient = all.get(i).getIduser2();
                 }
-                UtilisateurEntity user = this.utilisateurRepository.findUserById(recipient);
+                System.out.println(recipient+"user"+iduser);
+                UtilisateurEntity user = this.utilisateurService.findUserDescriById(recipient);
                 rep.add(new Discussion(user,all.get(i).getIddiscussion(),iduser));
             }
             return rep;

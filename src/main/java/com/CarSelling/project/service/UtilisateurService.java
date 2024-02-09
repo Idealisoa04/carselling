@@ -34,6 +34,18 @@ public class UtilisateurService {
     //     }
     // }
 
+    public UtilisateurEntity findUserDescriById(Integer id){
+        Object[] data = this.utilisateurRepository.findUserDescriById(id);
+        UtilisateurEntity user = new UtilisateurEntity();
+            user.setNom((String) data[0]);
+            user.setPrenom((String) data[1]);
+            user.setDateNaissance((Date) data[2]);
+            user.setSexe((Integer) data[3]);
+            user.setEmail((String) data[4]);
+            System.out.println(user.getNom());
+            return user;
+    }
+
     public UtilisateurEntity insertUser(String nom, String prenom, String dtn, Integer sexe, String email, String mdp ) throws Exception{
         try {
             java.sql.Date sqlDate = java.sql.Date.valueOf(dtn);
