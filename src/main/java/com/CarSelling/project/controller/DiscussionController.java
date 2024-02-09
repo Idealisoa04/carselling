@@ -23,45 +23,44 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/api/discussioncontroller")
 public class DiscussionController {
 
-    @Autowired
-    private MessageService messageService;
-    @Autowired
-    private DiscussionService discussionService;
-    @Autowired
-    private JwtService jwtService;
+    // @Autowired
+    // private MessageService messageService;
+    // @Autowired
+    // private DiscussionService discussionService;
+    // @Autowired
+    // private JwtService jwtService;
 
-    @PostMapping("/add")
-    public ResponseEntity<String> insertDiscussion(@RequestParam (name = "iduser2") Integer iduser2,@RequestHeader(name = "Authorization") String authHeader) throws Exception{
-        try{
-            String jwt = authHeader.substring(7);
-            String idUser = jwtService.extractUsername(jwt);
-            this.discussionService.insertDiscussion(Integer.valueOf(idUser), iduser2);
-            return ResponseEntity.ok("Succes");
-        }catch(Exception e){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
-        }
-    }
+    // @PostMapping("/add")
+    // public ResponseEntity<String> insertDiscussion(@RequestParam (name = "iduser2") Integer iduser2,@RequestHeader(name = "Authorization") String authHeader) throws Exception{
+    //     try{
+    //         String jwt = authHeader.substring(7);
+    //         String idUser = this.jwtService.extractUsername(jwt);
+    //         this.discussionService.insertDiscussion(Integer.valueOf(idUser), iduser2);
+    //         return ResponseEntity.ok("Succes");
+    //     }catch(Exception e){
+    //         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+    //     }
+    // }
 
-    @GetMapping("/messages")
-    public ResponseEntity<List<Message>> getMessages(@RequestParam (name = "iddiscussion") Integer iddiscussion) throws Exception{
-        try{
-            return ResponseEntity.ok(this.messageService.getMessageByDiscussion(iddiscussion));
-        }catch(Exception e){
-            throw e;
-        }
-    }
+    // @GetMapping("/messages")
+    // public ResponseEntity<List<Message>> getMessages(@RequestParam (name = "iddiscussion") Integer iddiscussion) throws Exception{
+    //     try{
+    //         return ResponseEntity.ok(this.messageService.getMessageByDiscussion(iddiscussion));
+    //     }catch(Exception e){
+    //         throw e;
+    //     }
+    // }
 
-    @GetMapping("/discussions")
-    public ResponseEntity<List<DiscussionEntity>> getDiscussions(@RequestHeader(name = "Authorization") String authHeader) throws Exception{
-        try{
-            String jwt = authHeader.substring(7);
-            String idUser = jwtService.extractUsername(jwt);
-            
-            return ResponseEntity.ok(this.discussionService.getAllDiscussion(Integer.valueOf(idUser)));
-        }catch(Exception e){
-            throw e;
-        }
-    }
+    // @GetMapping("/discussions")
+    // public ResponseEntity<List<Discussion>> getDiscussions(@RequestHeader(name = "Authorization") String authHeader) throws Exception{
+    //     try{
+    //         String jwt = authHeader.substring(7);
+    //         String idUser = this.jwtService.extractUsername(jwt);
+    //         return ResponseEntity.ok(this.discussionService.getAllDiscussionDescri(Integer.valueOf(idUser)));
+    //     }catch(Exception e){
+    //         throw e;
+    //     }
+    // }
 
     
 }

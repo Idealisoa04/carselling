@@ -154,4 +154,15 @@ public class AnnonceController {
         }
     }
 
+
+    @GetMapping("/annoncesUser")
+    public ResponseEntity<List> getAllByUser(@RequestHeader(name = "Authorization") String authHeader) throws Exception{
+        try{
+            String jwt = authHeader.substring(7);
+            String idUser = jwtService.extractUsername(jwt);
+        return ResponseEntity.ok(this.annonceService.getAllAnnonceByIdUser(Integer.valueOf(idUser)));
+        } catch(Exception e){
+            throw e;
+        }
+    }
 }

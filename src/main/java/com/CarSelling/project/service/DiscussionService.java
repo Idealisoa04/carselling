@@ -41,6 +41,7 @@ public class DiscussionService {
             List<Discussion> rep = new ArrayList<Discussion>();
             List<DiscussionEntity> all = discussionRepository.findAllDiscussion(iduser);
             for(int i=0 ; i<all.size() ; i++){
+                System.out.println("heerree");
                 Integer recipient = all.get(i).getIduser1();
                 if(recipient == iduser){
                     recipient = all.get(i).getIduser2();

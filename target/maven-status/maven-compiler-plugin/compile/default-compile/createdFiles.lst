@@ -60,6 +60,7 @@ com\CarSelling\project\authentification\JwtProperties.class
 com\CarSelling\project\repository\ModelRepository.class
 com\CarSelling\project\entity\UtilisateurEntity.class
 com\CarSelling\project\entity\MoteurEntity.class
+com\CarSelling\project\controller\DiscussController.class
 com\CarSelling\project\service\ClimatisationService.class
 com\CarSelling\project\repository\MoteurRepository.class
 com\CarSelling\project\Config\CustomUserDetailsService.class

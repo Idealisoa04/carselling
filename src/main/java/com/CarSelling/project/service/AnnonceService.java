@@ -25,6 +25,10 @@ public class AnnonceService {
         this.mongoTemplate = mongoTemplate;
     }
 
+    public List<AnnonceEntity> getAllAnnonceByIdUser(Integer iduser) {
+        return annonceRepository.findById_user(iduser);
+    }
+
     public List<AnnonceEntity> getAnnonceByEtat(Integer etat) {
         return annonceRepository.findByEtat(etat);
     }
