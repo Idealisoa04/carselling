@@ -66,7 +66,7 @@ public class MessageController {
     }
 
     @GetMapping("/{recipient}")
-    public List<Message> getMessagesByRecipient(@PathVariable String recipient,@RequestHeader(name = "Authorization") String authHeader) throws Exception{
+    public ResponseEntity<List<Message>> getMessagesByRecipient(@PathVariable String recipient,@RequestHeader(name = "Authorization") String authHeader) throws Exception{
         try{
             String jwt = authHeader.substring(7);
             String idUser = jwtService.extractUsername(jwt);
@@ -74,7 +74,7 @@ public class MessageController {
             if(discussion == null){
                 this.discussionService.insertDiscussion(Integer.valueOf(idUser), Integer.valueOf(recipient));
             }
-            return messagingService.getMessagesByRecipient(recipient);
+            return ResponseEntity.ok(messagingService.getMessagesByRecipient(recipient));
         } catch (Exception e){
             throw e;
         }
