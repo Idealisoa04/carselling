@@ -57,7 +57,7 @@ public class FavorisController {
         String jwt = authHeader.substring(7);
         Integer idUser = Integer.valueOf(this.jwtService.extractUsername(jwt));
         FavorisEntity favorisEntity = new FavorisEntity();
-        String id = annonce.get_id().toString();
+        String id = annonce.get_id().toHexString();
         System.out.println(id);
         favorisEntity.setIdannonce(id);
         UtilisateurEntity utilisateur = new UtilisateurEntity();
