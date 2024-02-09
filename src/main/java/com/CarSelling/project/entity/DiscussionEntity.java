@@ -5,6 +5,7 @@ import java.util.Objects;
 import com.CarSelling.project.service.UtilisateurService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.Transient;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -28,7 +29,7 @@ public class DiscussionEntity {
     private Integer iduser2;
 
     
-    @Autowired
+    @Transient
     private UtilisateurEntity recipient;
 
 
