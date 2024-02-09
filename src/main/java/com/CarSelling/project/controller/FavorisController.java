@@ -52,12 +52,12 @@ public class FavorisController {
     }
 
     @PostMapping(path = "/add")
-    public ResponseEntity<String> addNewEntity(@RequestBody ObjectId idannonce,@RequestHeader(name = "Authorization") String authHeader) throws Exception{
+    public ResponseEntity<String> addNewEntity(@RequestBody AnnonceEntity annonce,@RequestHeader(name = "Authorization") String authHeader) throws Exception{
         try{
         String jwt = authHeader.substring(7);
         Integer idUser = Integer.valueOf(this.jwtService.extractUsername(jwt));
         FavorisEntity favorisEntity = new FavorisEntity();
-        String id = String.valueOf(idannonce);
+        String id = String.valueOf(annonce.get_id());
         favorisEntity.setIdannonce(id);
         UtilisateurEntity utilisateur = new UtilisateurEntity();
         utilisateur.setIdutilisateur(idUser);

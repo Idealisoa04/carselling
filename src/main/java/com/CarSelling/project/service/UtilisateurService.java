@@ -23,6 +23,7 @@ public class UtilisateurService {
         return this.utilisateurRepository.findUserById(id);
     }
 
+
     // public UtilisateurEntity insertUser(String nom, String prenom, String dtn, Integer sexe, String email, String mdp ) throws Exception{
     //     try {
     //         java.sql.Date sqlDate = java.sql.Date.valueOf(dtn);

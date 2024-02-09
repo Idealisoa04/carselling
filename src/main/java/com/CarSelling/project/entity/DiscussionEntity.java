@@ -2,6 +2,10 @@ package com.CarSelling.project.entity;
 
 import java.util.Objects;
 
+import com.CarSelling.project.service.UtilisateurService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,6 +27,13 @@ public class DiscussionEntity {
     @Column(name = "iduser2")
     private Integer iduser2;
 
+    // @Autowired
+    // private UtilisateurService utilisateurService;
+
+    // @Autowired
+    // private UtilisateurEntity utilisateurEntity;
+
+
 
     
     @Override
@@ -37,6 +48,12 @@ public class DiscussionEntity {
     public int hashCode() {
         return Objects.hash(iddiscussion,iduser1,iduser2);
     }
+
+    // public void getInfoRecipient(Integer iduser) {
+    //     UtilisateurEntity user = this.utilisateurService.findUserById(iduser);
+    //     user.setMdp(null);
+    //     this.setUtilisateurEntity(user);
+    // }
 
     public Integer getIddiscussion() {
         return iddiscussion;
@@ -61,4 +78,12 @@ public class DiscussionEntity {
     public void setIduser2(Integer iduser2) {
         this.iduser2 = iduser2;
     }
+
+    // public UtilisateurEntity getUtilisateurEntity() {
+    //     return utilisateurEntity;
+    // }
+
+    // public void setUtilisateurEntity(UtilisateurEntity utilisateurEntity) {
+    //     this.utilisateurEntity = utilisateurEntity;
+    // }
 }

@@ -24,6 +24,15 @@ public class DiscussionService {
 
     public List<DiscussionEntity> getAllDiscussion(Integer iduser) throws Exception{
         try{
+            // List<DiscussionEntity> all = discussionRepository.findAllDiscussion(iduser);
+            // for(int i=0 ; i<all.size() ; i++){
+            //     Integer recipient = all.get(i).getIduser1();
+            //     if(recipient == iduser){
+            //         recipient = all.get(i).getIduser2();
+            //     }
+            //     all.get(i).getInfoRecipient(recipient);
+            // }
+            // return all;
             return discussionRepository.findAllDiscussion(iduser);
         } catch(Exception e){
             throw e;
