@@ -143,6 +143,17 @@ public class AnnonceController {
 
     }
 
+    
+    @PutMapping("/vendu") // vendu ou pas
+    public ResponseEntity<String> updateStatut(AnnonceEntity annonceEntity) {
+        try {
+            return ResponseEntity.ok(this.annonceService.updateVendu(annonceEntity));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+
+    }
+
     @GetMapping("/historique")
     public ResponseEntity<List<AnnonceEntity>> findHistorique(@RequestHeader(name = "Authorization") String authHeader) throws Exception{
         try{

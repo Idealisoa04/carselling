@@ -25,6 +25,19 @@ public class AnnonceService {
         this.mongoTemplate = mongoTemplate;
     }
 
+    public String updateVendu(AnnonceEntity annonceEntity) {
+        try {
+            mongoTemplate.updateFirst(
+                    Query.query(Criteria.where("_id").is(annonceEntity.get_id())),
+                    new Update().set("statut", 0),
+                    AnnonceEntity.class);
+
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+        return "ok";
+    }
+
     public List<AnnonceEntity> getAllAnnonceByIdUser(Integer iduser) {
         return annonceRepository.findById_user(iduser);
     }
