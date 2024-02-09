@@ -27,11 +27,9 @@ public class DiscussionEntity {
     @Column(name = "iduser2")
     private Integer iduser2;
 
-    // @Autowired
-    // private UtilisateurService utilisateurService;
-
-    // @Autowired
-    // private UtilisateurEntity utilisateurEntity;
+    
+    @Autowired
+    private UtilisateurEntity recipient;
 
 
 
@@ -48,12 +46,6 @@ public class DiscussionEntity {
     public int hashCode() {
         return Objects.hash(iddiscussion,iduser1,iduser2);
     }
-
-    // public void getInfoRecipient(Integer iduser) {
-    //     UtilisateurEntity user = this.utilisateurService.findUserById(iduser);
-    //     user.setMdp(null);
-    //     this.setUtilisateurEntity(user);
-    // }
 
     public Integer getIddiscussion() {
         return iddiscussion;
@@ -79,11 +71,12 @@ public class DiscussionEntity {
         this.iduser2 = iduser2;
     }
 
-    // public UtilisateurEntity getUtilisateurEntity() {
-    //     return utilisateurEntity;
-    // }
+    public UtilisateurEntity getRecipient() {
+        return recipient;
+    }
 
-    // public void setUtilisateurEntity(UtilisateurEntity utilisateurEntity) {
-    //     this.utilisateurEntity = utilisateurEntity;
-    // }
+    public void setRecipient(UtilisateurEntity recipient) {
+        this.recipient = recipient;
+    }
+
 }
