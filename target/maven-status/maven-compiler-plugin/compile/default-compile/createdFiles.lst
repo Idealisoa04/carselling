@@ -30,6 +30,7 @@ com\CarSelling\project\controller\CategorieController.class
 com\CarSelling\project\Config\FirebaseConfig.class
 com\CarSelling\project\repository\VitesseRepository.class
 com\CarSelling\project\tools\Utility.class
+com\CarSelling\project\model\NotificationMessage.class
 com\CarSelling\project\repository\MessageRepository.class
 com\CarSelling\project\repository\AnnonceRepository.class
 com\CarSelling\project\entity\VModelEntity.class
@@ -74,9 +75,11 @@ com\CarSelling\project\service\MarqueService.class
 com\CarSelling\project\entity\AchatEntity.class
 com\CarSelling\project\repository\DiscussionRepository.class
 com\CarSelling\project\Utils\Status.class
+com\CarSelling\project\controller\NotificationController.class
 com\CarSelling\project\repository\CarburantRepository.class
 com\CarSelling\project\controller\JanteController.class
 com\CarSelling\project\repository\VModelRepository.class
 com\CarSelling\project\service\AchatService.class
 com\CarSelling\project\service\MoteurService.class
 com\CarSelling\project\service\StatistiqueService.class
+com\CarSelling\project\service\FirebaseMessagingService.class

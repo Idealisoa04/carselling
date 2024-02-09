@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -51,14 +52,16 @@ public class FavorisController {
     }
 
     @PostMapping(path = "/add")
-    public ResponseEntity<String> addNewEntity(@RequestParam(name = "idannonce") String idannonce) {
+    public ResponseEntity<String> addNewEntity(@RequestBody ObjectId idannonce,@RequestHeader(name = "Authorization") String authHeader) throws Exception{
+        try{
+        String jwt = authHeader.substring(7);
+        Integer idUser = Integer.valueOf(this.jwtService.extractUsername(jwt));
         FavorisEntity favorisEntity = new FavorisEntity();
-        Integer idUser = 1;
-        favorisEntity.setIdannonce(idannonce);
+        String id = String.valueOf(idannonce);
+        favorisEntity.setIdannonce(id);
         UtilisateurEntity utilisateur = new UtilisateurEntity();
         utilisateur.setIdutilisateur(idUser);
         favorisEntity.setUtilisateurByIdUtilisateur(utilisateur);
-        try {
             this.favorisService.addnewFavoris(favorisEntity);
             return ResponseEntity.ok("succes");
         } catch (Exception e) {
