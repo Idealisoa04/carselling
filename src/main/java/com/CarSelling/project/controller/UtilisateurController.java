@@ -45,12 +45,12 @@ public class UtilisateurController {
     }
 
     @PostMapping("/signin")
-    public ResponseEntity<String> insertUtilisateur(@RequestParam(name = "nom") String nom, @RequestParam(name = "prenom") String prenom, @RequestParam(name = "date_naissance") String dtn, @RequestParam(name = "sexe") Integer sexe, @RequestParam(name = "email") String email, @RequestParam(name="mdp") String mdp) throws Exception{
+    public ResponseEntity<UtilisateurEntity> insertUtilisateur(@RequestParam(name = "nom") String nom, @RequestParam(name = "prenom") String prenom, @RequestParam(name = "date_naissance") String dtn, @RequestParam(name = "sexe") Integer sexe, @RequestParam(name = "email") String email, @RequestParam(name="mdp") String mdp) throws Exception{
         try {
-            this.utilisateurService.insertUser(nom, prenom, dtn, sexe, email, mdp);
-            return  ResponseEntity.ok("Tongasoa, Bienvenue ");
+            UtilisateurEntity user = this.utilisateurService.insertUser(nom, prenom, dtn, sexe, email, mdp);
+            return  ResponseEntity.ok(user);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+            throw e;
         }
     }
 

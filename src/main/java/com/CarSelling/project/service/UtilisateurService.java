@@ -23,11 +23,11 @@ public class UtilisateurService {
         return this.utilisateurRepository.findUserById(id);
     }
 
-    public void insertUser(String nom, String prenom, String dtn, Integer sexe, String email, String mdp ) throws Exception{
+    public UtilisateurEntity insertUser(String nom, String prenom, String dtn, Integer sexe, String email, String mdp ) throws Exception{
         try {
             java.sql.Date sqlDate = java.sql.Date.valueOf(dtn);
             System.out.println(sqlDate);
-            this.utilisateurRepository.insertUtilisateur(nom, prenom, sqlDate, sexe, email, mdp);
+            return this.utilisateurRepository.insertUtilisateur(nom, prenom, sqlDate, sexe, email, mdp);
         } catch (Exception e) {
             throw e;
         }
