@@ -132,7 +132,7 @@ public class AnnonceController {
     }
 
 
-    @PutMapping("/updateStatut") // vendu ou pas
+    @PutMapping("/updateStatuts") // vendu ou pas
     public ResponseEntity<String> updateStatut(@RequestParam("id") ObjectId id,
             @RequestParam("statut") Integer statut,@RequestParam("commission") Double commission) {
         try {
@@ -144,7 +144,7 @@ public class AnnonceController {
     }
 
     
-    @PutMapping("/vendu") // vendu ou pas
+    @PutMapping("/updateStatut") // vendu ou pas
     public ResponseEntity<String> updateStatut(AnnonceEntity annonceEntity) {
         try {
             return ResponseEntity.ok(this.annonceService.updateVendu(annonceEntity));
