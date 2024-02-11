@@ -26,7 +26,7 @@ public class CarSellingApplication {
 		// origins
 		config.addAllowedOrigin("http://localhost:3000");
 		config.addAllowedOrigin("http://localhost");
-		config.addAllowedOrigin("*");
+		
 		config.addAllowedOrigin("https://sparkling-paprenjak-6fba32.netlify.app");
 		config.addAllowedOrigin("https://melodic-custard-3a436a.netlify.app");
 		config.addAllowedMethod("PUT");
